@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import dotenv from "dotenv";
 import userRouter from "./routes/user.route.js";
@@ -15,6 +16,7 @@ mongoose
   });
 
 const app = express();
+app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.json());
 app.use(cookieParser());
 app.listen(3000, () => {
