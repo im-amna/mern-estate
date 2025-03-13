@@ -1,17 +1,19 @@
-import { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
 import SwiperCore from "swiper";
 import "swiper/css/bundle";
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import ListingItem from "../components/ListingItem";
 
-export default function Home() {
-  const [offerListings, setOfferListings] = useState([]);
-  const [saleListings, setSaleListings] = useState([]);
-  const [rentListings, setRentListings] = useState([]);
+const Home = () => {
+  const [offerListings, setOfferListings] = React.useState([]);
+  const [saleListings, setSaleListings] = React.useState([]);
+  const [rentListings, setRentListings] = React.useState([]);
+
   SwiperCore.use([Navigation]);
   console.log(offerListings);
+
   useEffect(() => {
     const fetchOfferListings = async () => {
       try {
@@ -23,6 +25,7 @@ export default function Home() {
         console.log(error);
       }
     };
+
     const fetchRentListings = async () => {
       try {
         const res = await fetch("/api/listing/get?type=rent&limit=4");
@@ -40,11 +43,12 @@ export default function Home() {
         const data = await res.json();
         setSaleListings(data);
       } catch (error) {
-        log(error);
+        console.log(error);
       }
     };
     fetchOfferListings();
   }, []);
+
   return (
     <div>
       {/* top */}
@@ -152,4 +156,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default Home;
