@@ -12,6 +12,7 @@ const Home = () => {
   const [rentListings, setRentListings] = React.useState([]);
 
   SwiperCore.use([Navigation]);
+
   console.log(offerListings);
 
   useEffect(() => {
