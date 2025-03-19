@@ -33,7 +33,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
 
 // Test Route
-app.get("/test", (_, res) => res.send("Hello world!"));
+app.get("/", (_, res) => res.send("Hello world!"));
 
 // Global Error Handler
 app.use((err, req, res, next) => {
