@@ -22,17 +22,19 @@ export default function Header() {
           <FaSearch className="text-slate-600" />
         </form>
         <ul className="flex gap-4">
-          <Link to="/Home">
-            <li className="hidden sm:inline  text-slate-700 hover:underline">
-              Home
-            </li>
-          </Link>
-          <Link to="/About">
+          {
+            <Link to="/Home">
+              <li className="hidden sm:inline  text-slate-700 hover:underline">
+                Home
+              </li>
+            </Link>
+          }
+          <Link to="/about">
             <li className="hidden sm:inline  text-slate-700 hover:underline">
               About
             </li>
           </Link>
-          <Link to="profile">
+          <Link to="/profile">
             {currentUser ? (
               <img
                 className="rounded-full h-7 w-7 object-cover"
