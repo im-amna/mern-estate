@@ -8,9 +8,12 @@ export default defineConfig({
       "/api": {
         target: "https://mern-estate-backend-lovat.vercel.app",
         changeOrigin: true,
-        secure: false,
+        secure: true,
       },
     },
+  },
+  build: {
+    outDir: "dist", // Ensure output directory is set correctly
   },
   plugins: [react()],
 });
