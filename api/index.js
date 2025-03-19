@@ -25,7 +25,7 @@ app.use(express.json());
 
 app.use(cookieParser());
 
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log("Server is running on port 3000!");
 });
 
@@ -35,7 +35,7 @@ app.use("/api/listing", listingRouter);
 
 app.use(express.static(path.join(__dirname, "/client/dist")));
 
-app.get("/", (_, res) => {
+app.get("/test", (_, res) => {
   res.send("Hello world!")
 })
 

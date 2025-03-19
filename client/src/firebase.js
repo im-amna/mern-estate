@@ -6,7 +6,6 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 
-console.log("🚀 ~ firebaseConfig.import.meta.env.VITE_FIREBASE_API_KEY:", import.meta.env.VITE_FIREBASE_API_KEY)
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "chatify-afab3.firebaseapp.com",
