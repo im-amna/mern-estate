@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../components/OAuth";
+import { backend_url } from "../server";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({}); //formData holds current state and usestate manage and store the data
@@ -21,7 +22,7 @@ export default function SignUp() {
     e.preventDefault(); //prevention from refresh pg etc
     try {
       setLoading(true);
-      const res = await fetch("/api/auth/signup", {
+      const res = await fetch(`${backend_url}/api/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

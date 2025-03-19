@@ -1,13 +1,15 @@
-import { useState } from "react";
 import {
   getDownloadURL,
   getStorage,
   ref,
   uploadBytesResumable,
 } from "firebase/storage";
-import { app } from "../firebase";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { app } from "../firebase";
+import { backend_url } from "../server";
+
 
 export default function CreateListing() {
   const { currentUser } = useSelector((state) => state.user);
@@ -132,7 +134,7 @@ export default function CreateListing() {
         return setError("Discount price must be lower than regular price");
       setLoading(true);
       setError(false);
-      const res = await fetch("/api/listing/create", {
+      const res = await fetch(`${backend_url}/api/listing/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
