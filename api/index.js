@@ -33,9 +33,9 @@ app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/listing", listingRouter);
 
-app.get("/test", (_, res) => {
-  res.send("Hello world!");
-});
+// app.route("/test", (_, res) => {
+//   res.send("Hello world!");
+// });
 
 app.use(express.static(path.join(__dirname, "/client/dist")));
 
