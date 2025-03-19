@@ -6,14 +6,14 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://mern-estate-backend-lovat.vercel.app",
+        target: "http://localhost:3001",
         changeOrigin: true,
         secure: true,
       },
     },
   },
   build: {
-    outDir: "dist", // Ensure output directory is set correctly
+    outDir: "dist",
   },
   plugins: [react()],
 });
