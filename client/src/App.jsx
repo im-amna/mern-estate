@@ -1,14 +1,14 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import PrivateRoute from "./components/privateRoute";
+import About from "./pages/About";
+import CreateListing from "./pages/CreateListing";
 import Home from "./pages/Home";
+import Listing from "./pages/Listing";
+import Profile from "./pages/Profile";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-import About from "./pages/About";
-import Profile from "./pages/Profile";
-import Header from "./components/Header";
-import PrivateRoute from "./components/PrivateRoute";
-import CreateListing from "./pages/CreateListing";
 import UpdateListing from "./pages/UpdateListing";
-import Listing from "./pages/Listing";
 
 import Search from "./pages/Search";
 
