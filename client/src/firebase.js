@@ -1,5 +1,3 @@
-// Initialize Firebase
-export const app = initializeApp(firebaseConfig);
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
