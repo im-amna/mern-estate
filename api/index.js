@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: 'https://mern-estate-frontend-iota.vercel.app',
+    origin: "https://mern-estate-frontend-iota.vercel.app",
     credentials: true,
   })
 );
@@ -46,6 +46,4 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start Server
-const PORT = process.env.PORT || 3002;
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}!`));
+export default app;
