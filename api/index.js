@@ -22,7 +22,20 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://mern-estate-frontend-iota.vercel.app",
+    origin: function (origin, callback) {
+      const allowedOrigins = [
+        "https://mern-estate-frontend-iota.vercel.app",
+      ];
+      if (
+        !origin ||
+        allowedOrigins.includes(origin) ||
+        /^https:\/\/mern-estate-frontend-.*\.vercel\.app$/.test(origin)
+      ) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
